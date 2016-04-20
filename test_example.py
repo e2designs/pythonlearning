@@ -14,7 +14,9 @@ test_module_example
 import os
 import pytest
 import sys
-from logger import Logger
+from logging import RootLogger as Logger
+
+LOGFILE = __name__
 
 pytestmark = [pytest.mark.req("00001","00002"),
 		pytest.mark.author("eevans"),
@@ -24,7 +26,7 @@ pytestmark = [pytest.mark.req("00001","00002"),
 # Set Global variable
 global variable
 
-def setup_module():
+def setup_module(module):
     """
     Setup for all tests in this module
 
@@ -36,7 +38,7 @@ def setup_module():
 
     pass
 
-def setup_function():
+def setup_function(function):
     """
     Setup for every test case in this module
 
@@ -49,7 +51,7 @@ def setup_function():
 
     pass
 
-def teardown_module():
+def teardown_module(module):
     """
     Teardown after all tests in this module
 
@@ -62,7 +64,7 @@ def teardown_module():
     pass
 
 
-def teardown_function():
+def teardown_function(function):
     """
     Teardown to be run after every test case 
 
@@ -193,7 +195,6 @@ class test_class1():
 	system_input = 43
 	assert system_input == self.var, "The wrong answer to the ultimate question"
 
-    @someotherdecorator.abc
     def test_2(self):
 	""" :Description: Test that it passes. """
 	system_input = 42
