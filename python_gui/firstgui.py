@@ -27,8 +27,18 @@ nameEntered.grid(column=0, row=1)
 
 # Adding a button
 action = tk.Button(win, text='Click Me!', command=clickMe)
-action.grid(column=1, row=1)
+action.grid(column=2, row=1)
+# action.configure(state='disabled')
 
+tk.Label(win, text="Choose a number:").grid(column=1, row=0)
+number = tk.StringVar()
+numberChosen = tk.Combobox(win, width=12, textvariable=number)
+numberChosen['values'] = (1, 2, 4, 42, 100)
+numberChosen.grid(column=1, row=1)
+numberChosen.current(0)
+
+win.focus()
+nameEntered.focus() # Change cursor to textbox
 # Start the GUI
 win.mainloop()
 
