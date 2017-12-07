@@ -4,12 +4,10 @@ def setup_module():
     pass
 
 
-
-
 def test_test1(username):
-    print 'running test1'
-    print username
+    print '\nrunning test1\n'
+    print 'Setup fixture returned:{}\n'.format(username)
 
 def test_test2(username):
-    print 'running test2'
-    print username
+    print '\nrunning test2\n'
+    print 'Setup fixture returned:{}\n'.format(username)
