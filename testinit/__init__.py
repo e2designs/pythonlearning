@@ -1,0 +1,1 @@
+MYGLOBAL = 'Hello World'
