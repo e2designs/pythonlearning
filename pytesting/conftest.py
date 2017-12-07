@@ -5,4 +5,5 @@ def username(request):
     print 'Request:{}'.format(request)
     user = request.param
     print '\nConftest Fixture:{}\n'.format(user)
-    return user
+    yield user
+    print 'RUNNING CONFTEST TEARDOWN'
