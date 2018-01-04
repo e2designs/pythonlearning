@@ -5,17 +5,16 @@ def setup_module():
 
 
 @pytest.fixture(scope="function")
-def func_username(username):
-    user = username
+def func_username(username, request):
+    user, host = username
     print "\nIn Setup_fixture with {}.\n".format(user)
-    return user
+    return user, host
 
-@pytest.mark.parametrize('func_username', ['functionuser1'])
+@pytest.mark.parametrize('func_username', ['Function1User'])
 def test_test1(func_username):
     print '\nrunning test1\n'
     print 'Setup fixture returned:{}\n'.format(func_username)
 
-@pytest.mark.parametrize('username', ['functionuser2'])
 def test_test2(func_username):
     print '\nrunning test2\n'
     print 'Setup fixture returned:{}\n'.format(func_username)
