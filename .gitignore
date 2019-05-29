@@ -1,0 +1,16 @@
+# File Extensions
+*.py[~coz]
+*.swp
+*.tmp
+*.log
+*.bak
+*.ini
+*.xml
+*.zip
+
+# Folders
+.coverage
+.cache
+.idea
+__pycache__
+python_gui
